@@ -22,7 +22,6 @@ The project reads 1-Wire devices through the native OWServer protocol on TCP/430
 - Bridge availability via MQTT LWT and OWServer connectivity state
 - Flat/legacy MQTT mode
 - ROM ID, alias and family in every JSON state
-- Pressure calculation for the configured DS2438
 
 ## MQTT
 
@@ -247,5 +246,5 @@ pytest -q
 ```
 
 The V3 release was validated with 15 automated tests plus end-to-end deployment
-testing on the target Photon.
+testing on the target Photon (docker).
 
