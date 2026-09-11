@@ -22,7 +22,7 @@ The project reads 1-Wire devices through the native OWServer protocol on TCP/430
 - Bridge availability via MQTT LWT and OWServer connectivity state
 - Flat/legacy MQTT mode
 - ROM ID, alias and family in every JSON state
-- special:Pressure calculation for the configured DS2438 (attached to an industrial transducer)
+- special: Pressure calculation for the configured DS2438 (attached to an industrial transducer)
 
 ## MQTT
 
