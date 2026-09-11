@@ -127,7 +127,7 @@ before deploying the bridge.
 
 ## License
 
-The project code is intended to be released under MIT. Dependencies retain their own licenses.
+The project code is intended to be released under GNU Affero General Public License v3.0.
 
 
 ## Release 1.0.0
