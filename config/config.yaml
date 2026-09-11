@@ -1,0 +1,26 @@
+owserver:
+  host: owfs
+  port: 4304
+  timeout: 5
+
+mqtt:
+  host: localhost
+  port: 1883
+  client_id: ow2mqtt
+  root_topic: 1-wire
+  mode: json
+  qos: 0
+  retain: true
+
+poll_interval: 60
+alias_file: /config/owalias.txt
+
+pressure:
+  enabled: true
+  alias: pressure
+  formula:
+    min_vad: 0.5
+    span_bar_at_4v: 150
+    bar_to_psi: 0.0689476
+    max_vad: 4.5
+    accuracy_divisor: 200

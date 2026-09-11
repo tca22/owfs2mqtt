@@ -1,0 +1,17 @@
+-project-management/
+-versions/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+.env
+*.log
+.DS_Store
+Thumbs.db
+
+# Local deployment configuration
+config/config.local.yaml
+config/owalias.txt
+docker-compose.local.yml

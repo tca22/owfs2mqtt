@@ -1,0 +1,40 @@
+services:
+  owfs2mqtt:
+    build: .
+    container_name: owfs2mqtt
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    environment:
+      OW_SERVER_HOST: "${OW_SERVER_HOST:-owfs}"
+      OW_SERVER_PORT: "${OW_SERVER_PORT:-4304}"
+      MQTT_HOST: "${MQTT_HOST:?Set MQTT_HOST to your MQTT broker host or IP}"
+      MQTT_PORT: "${MQTT_PORT:-1883}"
+      MQTT_CLIENT_ID: "${MQTT_CLIENT_ID:-ow2mqtt}"
+      MQTT_ROOT_TOPIC: "${MQTT_ROOT_TOPIC:-1-wire}"
+      MQTT_MODE: "${MQTT_MODE:-json}"
+      POLL_INTERVAL: "${POLL_INTERVAL:-60}"
+      ALIAS_FILE: "/config/owalias.txt"
+      CONFIG_FILE: "/config/config.yaml"
+      LOG_LEVEL: "${LOG_LEVEL:-INFO}"
+    networks:
+      - owfs_default
+    volumes:
+      - ${OWALIAS_FILE_HOST:-./owalias.txt}:/config/owalias.txt:ro
+
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    profiles:
+      - test
+    environment:
+      PYTHONPATH: /app
+
+networks:
+  owfs_default:
+    external: true
+

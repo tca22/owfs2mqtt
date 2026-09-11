@@ -1,0 +1,7 @@
+# Example OWServer ROM-to-alias mapping
+# Format: <ROM-ID> <alias>
+# Example:
+# 28FF000000000001 UG_VL_Wohnung
+#
+# Keep your real owalias.txt outside the public repository if it contains
+# site-specific device names.

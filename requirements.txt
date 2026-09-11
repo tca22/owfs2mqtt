@@ -1,0 +1,3 @@
+pyownet==0.10.0.post1
+paho-mqtt>=2.1,<3
+PyYAML>=6.0,<7
